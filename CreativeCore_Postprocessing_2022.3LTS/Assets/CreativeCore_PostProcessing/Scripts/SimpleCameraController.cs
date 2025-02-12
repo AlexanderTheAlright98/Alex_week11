@@ -187,7 +187,7 @@ namespace UnityTemplateProjects
             // Rotation
             if (IsCameraRotationAllowed())
             {
-                var mouseMovement = GetInputLookRotation() * Time.deltaTime * 10;
+                var mouseMovement = GetInputLookRotation() * Time.deltaTime * 5;
                 if (invertY)
                     mouseMovement.y = -mouseMovement.y;
                 
@@ -235,7 +235,7 @@ namespace UnityTemplateProjects
 #if ENABLE_INPUT_SYSTEM
             return lookAction.ReadValue<Vector2>();
 #else
-            return new Vector2(Input.GetAxis("Mouse X"), -Input.GetAxis("Mouse Y")) * 18;
+            return new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y")) * 10;
 #endif
         }
 
